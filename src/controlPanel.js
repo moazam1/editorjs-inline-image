@@ -62,27 +62,27 @@ export default class ControlPanel {
   render() {
     const wrapper = make('div', this.cssClasses.controlPanel);
     const tabWrapper = make('div', this.cssClasses.tabWrapper);
-    const embedUrlTab = make('div', [this.cssClasses.tab, this.cssClasses.active], {
+    /*const embedUrlTab = make('div', [this.cssClasses.tab, this.cssClasses.active], {
       innerHTML: 'Embed URL',
       onclick: () => this.showEmbedUrlPanel(),
-    });
-    const unsplashTab = make('div', this.cssClasses.tab, {
+    });*/
+    const unsplashTab = make('div', [this.cssClasses.tab, this.cssClasses.active], {
       innerHTML: 'Unsplash',
       onclick: () => this.showUnsplashPanel(),
     });
 
-    const embedUrlPanel = this.renderEmbedUrlPanel();
+    //const embedUrlPanel = this.renderEmbedUrlPanel();
     const unsplashPanel = this.renderUnsplashPanel();
 
-    tabWrapper.appendChild(embedUrlTab);
+    //tabWrapper.appendChild(embedUrlTab);
     tabWrapper.appendChild(unsplashTab);
     wrapper.appendChild(tabWrapper);
-    wrapper.appendChild(embedUrlPanel);
+    //wrapper.appendChild(embedUrlPanel);
     wrapper.appendChild(unsplashPanel);
 
-    this.nodes.embedUrlPanel = embedUrlPanel;
+    //this.nodes.embedUrlPanel = embedUrlPanel;
     this.nodes.unsplashPanel = unsplashPanel;
-    this.nodes.embedUrlTab = embedUrlTab;
+    //this.nodes.embedUrlTab = embedUrlTab;
     this.nodes.unsplashTab = unsplashTab;
 
     return wrapper;
@@ -94,9 +94,9 @@ export default class ControlPanel {
    * @returns {void}
    */
   showEmbedUrlPanel() {
-    this.nodes.embedUrlTab.classList.add(this.cssClasses.active);
+    //this.nodes.embedUrlTab.classList.add(this.cssClasses.active);
     this.nodes.unsplashTab.classList.remove(this.cssClasses.active);
-    this.nodes.embedUrlPanel.classList.remove(this.cssClasses.hidden);
+    //this.nodes.embedUrlPanel.classList.remove(this.cssClasses.hidden);
     this.nodes.unsplashPanel.classList.add(this.cssClasses.hidden);
   }
 
@@ -107,9 +107,9 @@ export default class ControlPanel {
    */
   showUnsplashPanel() {
     this.nodes.unsplashTab.classList.add(this.cssClasses.active);
-    this.nodes.embedUrlTab.classList.remove(this.cssClasses.active);
+    //this.nodes.embedUrlTab.classList.remove(this.cssClasses.active);
     this.nodes.unsplashPanel.classList.remove(this.cssClasses.hidden);
-    this.nodes.embedUrlPanel.classList.add(this.cssClasses.hidden);
+    //this.nodes.embedUrlPanel.classList.add(this.cssClasses.hidden);
   }
 
   /**
@@ -160,7 +160,8 @@ export default class ControlPanel {
    * @returns {HTMLDivElement}
    */
   renderUnsplashPanel() {
-    const wrapper = make('div', this.cssClasses.hidden);
+    //const wrapper = make('div', this.cssClasses.hidden);
+    const wrapper = make('div');
     const imageGallery = make('div', this.cssClasses.imageGallery);
     const searchInput = make('div', [this.cssClasses.input, this.cssClasses.caption, this.cssClasses.search], {
       id: 'unsplash-search',

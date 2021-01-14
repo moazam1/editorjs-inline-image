@@ -28,7 +28,7 @@ export default class InlineImage {
    */
   static get toolbox() {
     return {
-      title: 'Image',
+      title: 'Unsplash',
       icon: toolboxIcon,
     };
   }
